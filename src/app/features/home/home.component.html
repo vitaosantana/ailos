@@ -1,0 +1,64 @@
+<div class="home-container">
+    <app-timeline></app-timeline>
+    <div class="cpf-box">
+        <span class="titulo">Informe o CPF do futuro cooperado(a)</span>
+        <span>Se necessário, você poderá duplicar uma conta existente ou pausar e retornar este cadastro futuramente</span>
+        <span>Digite apenas os números (sem pontos ou traços).</span>
+    </div>
+
+    <div class="cpf-form">
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input
+              matInput
+              mask="000.000.000-00"
+              [formControl]="cpf"
+              placeholder="CPF"
+            />
+            <mat-error>
+              Informe um CPF válido
+            </mat-error>
+        </mat-form-field>
+
+        <button [disabled]="!cpf.valid" (click)="showDetails()" mat-flat-button>Consultar por CPF</button>
+    </div>
+
+    <div class="results-box" *ngIf="show && cpf.valid">
+        <div class="card">
+            <span class="details-title">Situação cadastral do CPF</span>
+            <div class="details">
+                <span class="small">Nome</span>
+                <span>Mariane de Sousa Oliveira</span>
+            </div>
+            <div class="details">
+                <span class="small">Situação do CPF</span>
+                <span>Regular</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <span class="details-title">Situação cadastral do CPF</span>
+            <div class="details">
+                <span class="small">Nome</span>
+                <span>Mariane de Sousa Oliveira</span>
+            </div>
+            <div class="details">
+                <span class="small">Situação do CPF</span>
+                <span>Regular</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="details-title">Situação cadastral do CPF</span>
+            <div class="details">
+                <span class="small">Nome</span>
+                <span>Mariane de Sousa Oliveira</span>
+            </div>
+            <div class="details">
+                <span class="small">Situação do CPF</span>
+                <span>Regular</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
